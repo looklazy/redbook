@@ -15,7 +15,10 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class HelloComponent {
 	public Mono<ServerResponse> hello(ServerRequest request) {
-
 		return ServerResponse.ok().body(Mono.just("world"), String.class);
+	}
+
+	public Mono<ServerResponse> hello2(ServerRequest request) {
+		return ServerResponse.ok().body(Mono.just("world2"), String.class);
 	}
 }

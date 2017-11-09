@@ -17,7 +17,13 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class HelloRouterConfig {
 
-	@Bean RouterFunction<ServerResponse> helloRouter(HelloComponent helloComponent) {
+	@Bean
+	RouterFunction<ServerResponse> helloRouter(HelloComponent helloComponent) {
 		return route(GET("/hello"), helloComponent::hello);
+	}
+
+	@Bean
+	RouterFunction<ServerResponse> hell2oRouter(HelloComponent helloComponent) {
+		return route(GET("/hello2"), helloComponent::hello2);
 	}
 }
